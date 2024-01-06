@@ -1,4 +1,5 @@
 import { ExpenseItem } from "../ExpenseItem/ExpenseItem";
+import "./ExpenseList.css";
 
 export const ExpenseList = () => {
   var expenses = [
@@ -10,8 +11,8 @@ export const ExpenseList = () => {
 
   return (
     <>
-      <div>
-        My Expenses
+      <div className="col-sm">
+        <h2>My Expenses</h2>
         {expenses.map((exp) => {
           return (
             <ExpenseItem id={exp.id} title={exp.title} price={exp.price} />

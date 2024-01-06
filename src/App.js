@@ -1,8 +1,10 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./index.css";
 import { RemainingBudget } from "./components/RemainingBudget/RemainingBudget";
 import { Expense } from "./components/Expenses/Expense";
 import { Budget } from "./components/Budget/Budget";
 import { ExpenseList } from "./components/ExpenseList/ExpenseList";
+import { ExpenseForm } from "./components/Form/ExpenseForm";
 
 function App() {
   return (
@@ -21,6 +23,9 @@ function App() {
       </div>
       <div>
         <ExpenseList />
+      </div>
+      <div className="form-container">
+        <ExpenseForm />
       </div>
     </div>
   );
