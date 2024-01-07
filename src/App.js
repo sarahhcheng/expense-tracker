@@ -14,6 +14,12 @@ function App() {
     setExpenseItems((prevExpenseItems) => [...prevExpenseItems, item]);
   };
 
+  const handleDeleteExpense = (expenseId) => {
+    setExpenseItems((prevExpenseItems) =>
+      prevExpenseItems.filter((expense) => expense.id !== expenseId)
+    );
+  };
+
   return (
     <div className="container">
       <div className="align-items">
@@ -30,7 +36,10 @@ function App() {
           </div>
         </div>
         <div className="expenseList-container">
-          <ExpenseList expenseItems={expenseItems} />
+          <ExpenseList
+            expenseItems={expenseItems}
+            onDeleteExpense={handleDeleteExpense}
+          />
           <ExpenseForm handleExpenseItems={handleExpenseItems} />
         </div>
       </div>
