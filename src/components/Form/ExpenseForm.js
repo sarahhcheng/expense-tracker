@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import "./ExpenseForm.css";
 import { v4 as uuidv4 } from "uuid";
+import { BudgetContext } from "../../BudgetContext";
 
-export const ExpenseForm = ({ handleExpenseItems }) => {
+export const ExpenseForm = () => {
   const [itemTitle, setItemTitle] = useState("");
   const [itemPrice, setItemPrice] = useState("");
+  const { handleExpenseItems } = useContext(BudgetContext);
 
   const addExpenseItem = (e) => {
     e.preventDefault();

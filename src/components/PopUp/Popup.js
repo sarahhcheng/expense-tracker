@@ -1,14 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./Popup.css";
 import { MdOutlineCancel } from "react-icons/md";
+import { BudgetContext } from "../../BudgetContext";
 
-const Popup = ({ isOpen, closePopup, onSetNewBudget }) => {
+const Popup = ({ isOpen, closePopup }) => {
   const [budget, setNewBudget] = useState("");
+  const { handleBudget } = useContext(BudgetContext);
 
   const newBudget = () => {
     const budgetValue = parseFloat(budget);
     if (budgetValue > 0 && !isNaN(budgetValue)) {
-      onSetNewBudget(budgetValue);
+      handleBudget(budgetValue);
       closePopup();
     } else {
       alert("Please enter a numeric value greater than 0");

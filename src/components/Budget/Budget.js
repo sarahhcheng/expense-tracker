@@ -1,15 +1,12 @@
 import { FaRegEdit } from "react-icons/fa";
 import "./Budget.css";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Popup from "../PopUp/Popup";
+import { BudgetContext } from "../../BudgetContext";
 
 export const Budget = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-  const [budget, setBudget] = useState(500);
-
-  const handleBudget = (b) => {
-    setBudget(b);
-  };
+  const { budget } = useContext(BudgetContext);
 
   const togglePopup = () => {
     setIsPopupOpen(!isPopupOpen);
@@ -26,7 +23,7 @@ export const Budget = () => {
         <Popup
           isOpen={isPopupOpen}
           closePopup={togglePopup}
-          onSetNewBudget={handleBudget}
+          //   onSetNewBudget={handleBudget}
         />
       </div>
     </div>

@@ -1,8 +1,11 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { ExpenseItem } from "../ExpenseItem/ExpenseItem";
 import "./ExpenseList.css";
+import { BudgetContext } from "../../BudgetContext";
 
-export const ExpenseList = ({ expenseItems, onDeleteExpense }) => {
+export const ExpenseList = () => {
+  const { expenseItems } = useContext(BudgetContext);
+
   return (
     <div className="expense-container">
       <div className="col-sm">
@@ -14,7 +17,6 @@ export const ExpenseList = ({ expenseItems, onDeleteExpense }) => {
               id={exp.id}
               title={exp.title}
               price={exp.price}
-              onDelete={onDeleteExpense}
             />
           );
         })}
