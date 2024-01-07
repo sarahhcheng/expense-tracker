@@ -26,3 +26,8 @@ body {
 .align-items {
   width: 100%;
 }
+
+.expenseList-container {
+  display: flex;
+  column-gap: 50px;
+}

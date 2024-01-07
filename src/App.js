@@ -5,8 +5,15 @@ import { Expense } from "./components/Expenses/Expense";
 import { Budget } from "./components/Budget/Budget";
 import { ExpenseList } from "./components/ExpenseList/ExpenseList";
 import { ExpenseForm } from "./components/Form/ExpenseForm";
+import { useState } from "react";
 
 function App() {
+  const [expenseItems, setExpenseItems] = useState([]);
+
+  const handleExpenseItems = (item) => {
+    setExpenseItems((prevExpenseItems) => [...prevExpenseItems, item]);
+  };
+
   return (
     <div className="container">
       <div className="align-items">
@@ -22,11 +29,9 @@ function App() {
             <Expense />
           </div>
         </div>
-        <div>
-          <ExpenseList />
-        </div>
-        <div className="form-container">
-          <ExpenseForm />
+        <div className="expenseList-container">
+          <ExpenseList expenseItems={expenseItems} />
+          <ExpenseForm handleExpenseItems={handleExpenseItems} />
         </div>
       </div>
     </div>
