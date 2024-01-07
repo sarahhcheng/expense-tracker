@@ -9,23 +9,25 @@ import { ExpenseForm } from "./components/Form/ExpenseForm";
 function App() {
   return (
     <div className="container">
-      <h1>My Expense Tracker</h1>
-      <div className="row mt-3">
-        <div className="col-sm">
-          <Budget />
+      <div className="align-items">
+        <h1 className="app-title">My Expense Tracker</h1>
+        <div className="row mt-3">
+          <div className="col-sm">
+            <Budget />
+          </div>
+          <div className="col-sm">
+            <RemainingBudget />
+          </div>
+          <div className="col-sm">
+            <Expense />
+          </div>
         </div>
-        <div className="col-sm">
-          <RemainingBudget />
+        <div>
+          <ExpenseList />
         </div>
-        <div className="col-sm">
-          <Expense />
+        <div className="form-container">
+          <ExpenseForm />
         </div>
-      </div>
-      <div>
-        <ExpenseList />
-      </div>
-      <div className="form-container">
-        <ExpenseForm />
       </div>
     </div>
   );

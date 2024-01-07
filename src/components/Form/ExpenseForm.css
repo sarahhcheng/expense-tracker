@@ -1,8 +1,11 @@
 .expense-form {
   display: flex;
   flex-direction: column;
+  padding: 20px;
   max-width: 300px;
   margin: auto;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .expense-form div {
