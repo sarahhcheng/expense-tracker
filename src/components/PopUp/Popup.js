@@ -3,15 +3,19 @@ import "./Popup.css";
 import { MdOutlineCancel } from "react-icons/md";
 
 const Popup = ({ isOpen, closePopup, onSetNewBudget }) => {
-  const [budget, setNewBudget] = useState(0);
-
-  if (!isOpen) return null;
+  const [budget, setNewBudget] = useState("");
 
   const newBudget = () => {
-    onSetNewBudget(budget);
+    const budgetValue = parseFloat(budget);
+    if (budgetValue > 0 && !isNaN(budgetValue)) {
+      onSetNewBudget(budgetValue);
+      closePopup();
+    } else {
+      alert("Please enter a numeric value greater than 0");
+    }
   };
 
-  return (
+  return isOpen ? (
     <div className="popup-backdrop">
       <div className="popup">
         <h3>New budget</h3>
@@ -23,7 +27,7 @@ const Popup = ({ isOpen, closePopup, onSetNewBudget }) => {
             onChange={(e) => setNewBudget(e.target.value)}
           />
           <button
-            type="submit"
+            type="button" // Change to button to avoid form submission
             className="btn btn-primary mt-3"
             onClick={newBudget}
           >
@@ -32,7 +36,7 @@ const Popup = ({ isOpen, closePopup, onSetNewBudget }) => {
         </div>
       </div>
     </div>
-  );
+  ) : null;
 };
 
 export default Popup;
