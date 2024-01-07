@@ -15,7 +15,7 @@ export const ExpenseItem = (props) => {
       <TiDelete
         className="delete-icon"
         size="1.5em"
-        onClick={() => handleDeleteExpense(id)}
+        onClick={() => handleDeleteExpense(price, id)}
       ></TiDelete>
     </div>
   );

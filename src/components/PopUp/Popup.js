@@ -4,12 +4,15 @@ import { MdOutlineCancel } from "react-icons/md";
 import { BudgetContext } from "../../BudgetContext";
 
 const Popup = ({ isOpen, closePopup }) => {
-  const [budget, setNewBudget] = useState("");
-  const { handleBudget } = useContext(BudgetContext);
+  const [inputBudget, setNewBudget] = useState("");
+  const { budget, handleBudget, remaining, setRemaining } =
+    useContext(BudgetContext);
 
   const newBudget = () => {
-    const budgetValue = parseFloat(budget);
+    const budgetValue = parseFloat(inputBudget);
     if (budgetValue > 0 && !isNaN(budgetValue)) {
+      const changeRemaining = budgetValue - budget;
+      setRemaining(remaining + changeRemaining);
       handleBudget(budgetValue);
       closePopup();
     } else {
