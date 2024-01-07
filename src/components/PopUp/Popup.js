@@ -18,7 +18,7 @@ const Popup = ({ isOpen, closePopup, onSetNewBudget }) => {
   return isOpen ? (
     <div className="popup-backdrop">
       <div className="popup">
-        <h3>New budget</h3>
+        <label>New Budget</label>
         <MdOutlineCancel className="close-button" onClick={closePopup} />
         <div className="new-budget">
           <input

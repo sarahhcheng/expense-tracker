@@ -4,7 +4,7 @@ import "./ExpenseList.css";
 
 export const ExpenseList = ({ expenseItems, onDeleteExpense }) => {
   return (
-    <>
+    <div className="expense-container">
       <div className="col-sm">
         <h2>My Expenses</h2>
         {expenseItems.map((exp) => {
@@ -19,6 +19,6 @@ export const ExpenseList = ({ expenseItems, onDeleteExpense }) => {
           );
         })}
       </div>
-    </>
+    </div>
   );
 };
