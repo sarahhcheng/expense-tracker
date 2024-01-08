@@ -8,6 +8,7 @@ export const BudgetProvider = ({ children }) => {
   const [remaining, setRemaining] = useState(0);
   const [expenses, setExpenses] = useState(0);
   const [expenseItems, setExpenseItems] = useState([]);
+  const [budgetSet, changeBudgetSet] = useState(false);
 
   // For adding new items
   const handleExpenseItems = (item) => {
@@ -42,6 +43,8 @@ export const BudgetProvider = ({ children }) => {
     setExpenseItems,
     handleDeleteExpense,
     handleBudget,
+    budgetSet,
+    changeBudgetSet,
   };
 
   return (
