@@ -7,6 +7,7 @@
   padding: 20px;
   background-color: #f4f4f4;
   width: 100%;
-  border-radius: 20px;
+  border-radius: 7px;
   min-height: 500px;
+  border: 1px solid #cecece;
 }
